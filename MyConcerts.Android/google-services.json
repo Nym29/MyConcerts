@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "21590963896",
+    "firebase_url": "https://myconcerts-87991.firebaseio.com",
+    "project_id": "myconcerts-87991",
+    "storage_bucket": "myconcerts-87991.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21590963896:android:82d8ef10514097c1",
+        "android_client_info": {
+          "package_name": "com.testapp.myconcerts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21590963896-5gebjgpre67cjbfnq85shs6t9ncv2mkd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1vt-R1TcslqgRVKL1juUVqXjJW90rsZA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21590963896-5gebjgpre67cjbfnq85shs6t9ncv2mkd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "21590963896-jrtk2srfe3h5bor2p70hbulk3t635cv0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.testapp.myconcerts"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

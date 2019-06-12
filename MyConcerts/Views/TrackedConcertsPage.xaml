@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConcerts.TrackedConcertsPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             Title="Tracked Concerts" Icon="speakers.png"
+             Padding="20">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="errorImg" Source="error" IsVisible="false"></Image>
+            <Label x:Name="errorLabel1" HorizontalTextAlignment="Center" IsVisible="false">Content Unavailable</Label>
+            <Label x:Name="errorLabel2" HorizontalTextAlignment="Center" IsVisible="false">You need to be logged in to view this page.</Label>
+            
+         <Label x:Name="upcomingConcertsLabel" 
+                Text="My Upcoming Concerts" 
+                BackgroundColor="#9575cd" 
+                TextColor="White" 
+                HorizontalTextAlignment="Center"
+                IsVisible="true"/>
+        
+            <ListView   x:Name="UpcomingConcertsListView"
+                    ItemsSource="{Binding}"
+                    ItemTapped="OnItemTapped"
+                    HasUnevenRows="true" 
+                    SeparatorVisibility="None"
+                    VerticalScrollBarVisibility="Always"
+                    IsVisible="true">
+        
+            <ListView.ItemTemplate >                    
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                          Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            
+                            <Grid>
+                               <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                       WidthRequest="75" HeightRequest="75" Aspect="AspectFit" VerticalOptions="Center"
+                                       Source="{Binding ImageUrl}" />
+                                <StackLayout Grid.Column="1">
+                                    <Label Grid.Row="0" Text="{Binding EventName}" FontSize="Medium" FontAttributes="Bold" />
+                                    <Label Grid.Row="1" Text="{Binding Venue}" FontSize="Small" />
+                                    <Label Grid.Row="2" Text="{Binding Location}" FontSize="Small" />
+                                    <Label Grid.Row="3" Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" />
+                                </StackLayout>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>                    
+                </ListView.ItemTemplate>    
+        </ListView>
+        
+        <Label x:Name="pastConcertsLabel"
+               Text="My Past Concerts" 
+               BackgroundColor="#9575cd" 
+               TextColor="White" 
+               HorizontalTextAlignment="Center"
+               IsVisible="true"/>
+        <ListView   x:Name="PastConcertsListView"
+                    ItemsSource="{Binding}"
+                    ItemTapped="OnItemTapped"
+                    HasUnevenRows="true" 
+                    SeparatorVisibility="None"
+                    IsVisible="true">
+        
+            <ListView.ItemTemplate >                    
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                          Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            
+                            <Grid>
+                               <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="75" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                       WidthRequest="75" HeightRequest="75" Aspect="AspectFit" VerticalOptions="Center"
+                                       Source="{Binding ImageUrl}" />
+                                <StackLayout Grid.Column="1">
+                                    <Label Grid.Row="0" Text="{Binding EventName}" FontSize="Medium" FontAttributes="Bold" />
+                                    <Label Grid.Row="1" Text="{Binding Venue}" FontSize="Small" />
+                                    <Label Grid.Row="2" Text="{Binding Location}" FontSize="Small" />
+                                    <Label Grid.Row="3" Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" FontSize="Small" />
+                                </StackLayout>
+                                
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>                    
+                </ListView.ItemTemplate>    
+        </ListView>            
+            
+        </StackLayout>
+            
+    </ContentPage.Content>
+</ContentPage>

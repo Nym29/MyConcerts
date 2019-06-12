@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConcerts.Views.ErrorPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             Title="Error"
+             Padding="20">
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Image Source="error"></Image>
+            <Label HorizontalTextAlignment="Center">Content Unavailable</Label>
+            <Label HorizontalTextAlignment="Center">You need to be logged in to view this page.</Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

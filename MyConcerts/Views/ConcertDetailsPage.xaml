@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MyConcerts.Views.ConcertDetailsPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             Title="Concert Details"
+             Padding="20">
+    
+    
+    <ContentPage.Content>
+        <StackLayout Margin="5" Padding="10">
+            <Image HeightRequest="150" Aspect="AspectFit"
+                   Source="{Binding ImageUrl}" />
+
+            <Label Text="{Binding Artist.Name}" FontAttributes="Bold" />
+            <Label Text="{Binding Location}"/>  
+            <Label Text="{Binding Venue}"/>
+            <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"/>
+            <Label Text="{Binding Time}"/>  
+            <Button Text="Track This Concert" Clicked="OnTrackConcertClicked"
+                    BackgroundColor="#9575cd" TextColor="White" FontAttributes="Bold"
+                    x:Name="trackConcertBtn"/>
+            <Button Text="Buy Tickets" BackgroundColor="#b388ff" TextColor="White" FontAttributes="Bold" Clicked="OnBuyTicketsClicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="MyConcerts.SavedSearchesPage"
+             Title="Searches" Icon="bookmark.png"
+             Padding="20">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="errorImg" Source="error" IsVisible="false"></Image>
+            <Label x:Name="errorLabel1" HorizontalTextAlignment="Center" IsVisible="false">Content Unavailable</Label>
+            <Label x:Name="errorLabel2" HorizontalTextAlignment="Center" IsVisible="false">You need to be logged in to view this page.</Label>
+            
+         <Label 
+            x:Name="savedSearchLabel"
+            Text="My Saved Searches"/>
+        <ListView   x:Name="SavedSearchesListView"
+                    ItemsSource="{Binding}"
+                    ItemTapped="OnItemTapped"
+                    HasUnevenRows="true" 
+                    SeparatorVisibility="None">
+        
+            <ListView.ItemTemplate>                    
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                          Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <StackLayout BackgroundColor="#b388ff" Margin="5" Padding="10">
+                                <Label Text="{Binding Location}" FontAttributes="Bold" />
+                                <Label Text="{Binding MusicStyle}"/>  
+                                <Label Text="{Binding StartDate, StringFormat='{0:MMMM dd, yyyy}'}"/>
+                                <Label Text="{Binding EndDate, StringFormat='{0:MMMM dd, yyyy}'}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>                    
+                </ListView.ItemTemplate>    
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

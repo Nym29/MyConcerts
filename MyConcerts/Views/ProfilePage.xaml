@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConcerts.ProfilePage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             Icon="profile.png"
+             Padding="20">
+    
+    <StackLayout>
+        <Image Source="profile.png"></Image>
+        <Label x:Name="userNameLabel" HorizontalOptions="Center"/>
+        <Label HorizontalTextAlignment="Center" Text="{Binding App.LoggedInUser.Email}" ></Label>
+        <Button Text="My Tracked Concerts" Clicked="OnTrackedConcertsButtonClicked"></Button>
+        <Button Text="My Saved Searches" Clicked="OnSavedSearchesButtonClicked"></Button>
+        <Button Text="Preferences" Clicked="OnPreferencesButtonClicked"></Button>
+        <Button Text="Log in" Clicked="OnLogInButtonClicked"></Button>
+        <Button Text="Log Out" Clicked="OnLogOutButtonClicked"></Button>
+    </StackLayout>
+    
+    
+    
+</ContentPage>

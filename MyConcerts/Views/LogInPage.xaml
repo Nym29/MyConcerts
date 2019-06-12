@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MyConcerts.Views.LogInPage"
+             Title="Log In"
+             Padding="20">
+    <ContentPage.Content>
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0">Username</Label>
+            <Entry Grid.Row="0" Grid.Column="1" x:Name="emailInput" Keyboard="Email" Placeholder="my_email@email.com"></Entry>
+            
+            <Label Grid.Row="1" Grid.Column="0">Password</Label>
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="passwordInput" IsPassword="true"></Entry>
+            
+            <Button Grid.Row="3" Grid.Column="0" Text="Log In" x:Name="logInBtn" BackgroundColor="#9575cd" TextColor="White" Clicked="OnLogInButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="1" Text="Sign Up" x:Name="signUpBtn" BackgroundColor="#9575cd" TextColor="White" Clicked="OnSignUpButtonClicked"/>
+            
+            <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center">OR </Label>
+            
+            <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#9575cd" TextColor="White" Text="Log In With Facebook"/>
+            
+            <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="#9575cd" TextColor="White" Text="Log In With Google"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

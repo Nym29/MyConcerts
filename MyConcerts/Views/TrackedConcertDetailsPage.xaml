@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MyConcerts.Views.TrackedConcertDetailsPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             Title="Tracked Concert"
+             Padding="20">
+    <ContentPage.Content> 
+        <ScrollView>
+        <StackLayout>
+             
+            <Image HeightRequest="150" Aspect="AspectFit"
+                   Source="{Binding ImageUrl}" />
+
+            <Label Text="{Binding Artist.Name}" FontAttributes="Bold" />
+            <Label Text="{Binding Location}"/>  
+            <Label Text="{Binding Venue}"/>
+            <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"/>
+            <Label Text="{Binding Time}"/>  
+            <ProgressBar></ProgressBar>
+            <Label HorizontalTextAlignment="Center">NOTES</Label>
+                
+                <Frame BorderColor="#9575cd" Padding="20">
+                    <Editor x:Name="notesInput"
+                           Text="{Binding Notes}" />
+            </Frame>
+           
+            <Button Text="SAVE NOTES" Clicked="OnSaveNotesClicked"
+                    BackgroundColor="#9575cd" TextColor="White" FontAttributes="Bold"
+                    HorizontalOptions="Center" Padding="20" />
+            <Label HorizontalTextAlignment="Center">SETLIST</Label>
+            <Button Text="ADD SETLIST" Clicked="OnAddSetlistClicked"
+                    BackgroundColor="#9575cd" TextColor="White" FontAttributes="Bold"
+                    HorizontalOptions="Center" Padding="20"
+                    x:Name="addSetlistBtn"/>
+            <Frame BorderColor="#9575cd" Padding="20">
+                    <Label x:Name="setlistLabel" Text="{Binding Setlist}"/>
+            </Frame>
+        </StackLayout>
+      </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

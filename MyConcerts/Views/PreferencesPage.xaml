@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyConcerts.PreferencesPage"
+             Title="Preferences"
+             Padding="20">
+    <ContentPage.Content>
+        <Grid>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Row="0" Grid.ColumnSpan="2" Source="profile"></Image>
+            
+            <Label Grid.Row="1" Grid.Column="0" Text="Email" VerticalOptions="Center" />
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="emailInput" Placeholder="uriell.colas@gmail.com" Keyboard="Text" />
+            
+            <Label Grid.Row="2" Grid.Column="0" Text="Enable Email Notifications" VerticalOptions="Center" />
+            <Switch Grid.Row="2" Grid.Column="1" x:Name="emailNotificiationsSwitch"></Switch>
+            
+            <Label Grid.Row="3" Grid.Column="0" Text="Enable Push Notifications" VerticalOptions="Center" />
+            <Switch Grid.Row="3" Grid.Column="1" x:Name="pushNotificiationsSwitch"></Switch>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
